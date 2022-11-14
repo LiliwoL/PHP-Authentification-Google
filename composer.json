@@ -1,0 +1,6 @@
+{
+    "require": {
+        "hybridauth/hybridauth": "^3.8",
+        "vlucas/phpdotenv": "^5.5"
+    }
+}
