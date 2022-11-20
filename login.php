@@ -25,18 +25,7 @@ try {
         print_r($userProfile);
         echo '<a href="logout.php">Logout</a>';
     }else{
-
-        if ( isset($_GET['state'])){
-            $adapter->authenticate();
-            $userProfile = $adapter->getUserProfile();
-            print_r($userProfile);
-            echo '<a href="logout.php">Logout</a>';
-        }else{
-            // Affichage de l'image de login
-            echo '<a href="login.php">
-                <img src="' . REDIRECT_URL . '/images/google-login.png" alt="Google Login"/>
-            </a>';
-        }
+        $adapter->authenticate();
     }
 }
 catch( Exception $e ){
