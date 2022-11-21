@@ -6,12 +6,6 @@ require_once 'vendor/autoload.php';
 // Config
 require_once 'config/config.php';
 
-// Include user class
-require_once 'User.class.php';
-
-
-// Initialize user class
-$user = new User();
 $output = '';
 
 // Initialize Google Client class
@@ -27,10 +21,16 @@ try {
     }else{
 
         if ( isset($_GET['state'])){
-            $adapter->authenticate();
-            $userProfile = $adapter->getUserProfile();
-            print_r($userProfile);
-            echo '<a href="logout.php">Logout</a>';
+
+            /* Redirection vers une page différente du même dossier*/
+            $host = $_SERVER['HTTP_HOST'];
+            $qry = $_SERVER['QUERY_STRING'];
+
+            $uri  = rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
+            $extra='login.php';
+
+            header("Location:http://$host$uri/$extra?$qry");
+
         }else{
             // Affichage de l'image de login
             echo '<a href="login.php">

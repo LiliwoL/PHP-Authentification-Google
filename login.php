@@ -19,13 +19,23 @@ $output = '';
 $adapter = new Hybridauth\Provider\Google( $config );
 
 try {
+    $adapter->authenticate();
+
     if ($adapter->isConnected())
     {
         $userProfile = $adapter->getUserProfile();
         print_r($userProfile);
         echo '<a href="logout.php">Logout</a>';
     }else{
-        $adapter->authenticate();
+
+        /* Redirection vers une page différente du même dossier*/
+        $host = $_SERVER['HTTP_HOST'];
+
+        $uri  = rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
+        $extra='login.php';
+
+        header("Location:http://$host$uri/$extra");
+
     }
 }
 catch( Exception $e ){
