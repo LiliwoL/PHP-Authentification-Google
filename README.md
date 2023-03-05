@@ -1,6 +1,8 @@
 # Authentification avec Google OAuth API
 
-Dépôt pour découvrir l'authentification avec GitHub OAuth API.
+![img_1.png](img_1.png)
+
+Dépôt pour découvrir l'authentification avec Google OAuth API.
 
 ***
 
@@ -89,10 +91,23 @@ curl --request GET \
 
 https://console.cloud.google.com/projectselector2/apis/dashboard
 
+![img_2.png](img_2.png)
 
 
 ### Obtenir des identifiants OAuth 2.0
 
+Allez ensuite dans Identifiants dans la colonne de gauche
+
+![img_3.png](img_3.png)
+
+Cliquez sur **Créer des identifiants**, puis sur ID clientOAuth
+
+![img_4.png](img_4.png)
+
+![img_5.png](img_5.png)
+
+Complétez le formulaire suivant
+![img_6.png](img_6.png)
 
 ## Dépendances
 
