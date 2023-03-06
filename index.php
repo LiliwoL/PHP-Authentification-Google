@@ -14,8 +14,12 @@ $adapter = new Hybridauth\Provider\Google( $config );
 try {
     if ($adapter->isConnected())
     {
+        // Récupération du profil connecté
         $userProfile = $adapter->getUserProfile();
+
+        // Affichage
         print_r($userProfile);
+        echo "<br><br>";
         echo '<a href="logout.php">Logout</a>';
     }else{
 
@@ -30,7 +34,13 @@ try {
 
             // Redirection
             header("Location:http://$host$uri/$extra?$qry");
+        }elseif( isset($_GET['purge']) ){
 
+            // Purge de la base
+            $user->purge();
+
+
+            header('Location: ./');
         }else{
             // Affichage de l'image de login
             $output .= '<a href="login.php">';
