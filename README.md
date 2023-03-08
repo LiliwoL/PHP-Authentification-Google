@@ -91,23 +91,45 @@ curl --request GET \
 
 https://console.cloud.google.com/projectselector2/apis/dashboard
 
-![img_2.png](img_2.png)
+![doc/img_2.png](doc/img_2.png)
 
 
 ### Obtenir des identifiants OAuth 2.0
 
 Allez ensuite dans Identifiants dans la colonne de gauche
 
-![img_3.png](img_3.png)
+![doc/img_3.png](doc/img_3.png)
 
 Cliquez sur **Créer des identifiants**, puis sur ID clientOAuth
 
-![img_4.png](img_4.png)
+![doc/img_4.png](doc/img_4.png)
 
-![img_5.png](img_5.png)
+![doc/img_5.png](doc/img_5.png)
 
 Complétez le formulaire suivant
-![img_6.png](img_6.png)
+![doc/img_6.png](doc/img_6.png)
+
+Vous sélectionnerez **Application Web**
+![img.png](img.png)
+
+Donnez un nom à votre application.
+
+Ensuite, plus bas, il faut déclarer les **URI de redirtection autorisées**.
+Vous pouvez en saisir plusieurs.
+
+> ATTENTION: Les URLS de classe privées sont interdites par Google
+
+![img_1.png](img_1.png)
+
+Vous serez donc **obligés** de saisir une adresse différente pour la redirection.
+
+![img_2.png](img_2.png)
+
+N'oubliez pas de remplir le fichier **.env** correspondant
+
+![img_3.png](img_3.png)
+
+
 
 ## Dépendances
 
