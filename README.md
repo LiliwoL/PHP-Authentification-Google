@@ -1,6 +1,8 @@
 # Authentification avec Google OAuth API
 
-![img_1.png](img_1.png)
+[toc]
+
+![img_1.png](doc/img_1.png)
 
 Dépôt pour découvrir l'authentification avec Google OAuth API.
 
@@ -13,7 +15,7 @@ Ce mécanisme est utilisé par des sociétés comme Google, Facebook, Twitter et
 de partager leurs informations avec des applications tierces. 
 On le retrouve très souvent utilisé pour mettre en place un système de "Connexion via X".
 
-![img.png](img.png)
+![img.png](doc/img.png)
 
 https://developers.google.com/identity/protocols/oauth2
 https://developers.google.com/identity/
@@ -36,10 +38,10 @@ Pour cela on dirige l'utilisateur vers l'url d'autorisation accompagnée de para
 ```
 
 * L'URL d'autorisation peut être obtenu en consultant la documentation ou en interrogeant un fichier de découverte, comme c'est le cas pour Google par exemple). 
-* Le CLIENT_ID s'obtient en créant une application auprès du service concerné. La création de l'application permet aussi de personnaliser l'apparence de l'écran d'autorisation qui sera présenté à l'utilisateur.
-* Le scope va dépendre des services et permet de définir les informations que l'on souhaite obtenir ou les actions que l'on souhaite auprès de l'utilisateur.
-* Le redirect_uri permet de définir l'URL vers laquelle l'utilisateur sera redirigé lorsqu'il aura accepté les permissions. C'est cette URL qui sera responsable du traitement des informations liées à l'autorisation.
-* Le access_type permet de définir le type de token que l'on souhaite obtenir. "offline" permettra d'obtenir un refresh_token qui pourra être utilisé pour regénérer un access_token plus tard et ainsi accéder à l'API bien après la phase d'acceptation de l'utilisateur.
+* Le **CLIENT_ID** s'obtient en créant une application auprès du service concerné. La création de l'application permet aussi de personnaliser l'apparence de l'écran d'autorisation qui sera présenté à l'utilisateur.
+* Le **scope** va dépendre des services et permet de définir les informations que l'on souhaite obtenir ou les actions que l'on souhaite auprès de l'utilisateur.
+* Le **redirect_uri** permet de définir l'URL vers laquelle l'utilisateur sera redirigé lorsqu'il aura accepté les permissions. C'est cette URL qui sera responsable du traitement des informations liées à l'autorisation.
+* Le **access_type** permet de définir le type de token que l'on souhaite obtenir. "offline" permettra d'obtenir un refresh_token qui pourra être utilisé pour regénérer un access_token plus tard et ainsi accéder à l'API bien après la phase d'acceptation de l'utilisateur.
 
 ***
 
@@ -107,27 +109,28 @@ Cliquez sur **Créer des identifiants**, puis sur ID clientOAuth
 ![doc/img_5.png](doc/img_5.png)
 
 Complétez le formulaire suivant
+
 ![doc/img_6.png](doc/img_6.png)
 
 Vous sélectionnerez **Application Web**
-![img.png](img.png)
+![doc/img.png](doc/img_7.png)
 
 Donnez un nom à votre application.
 
-Ensuite, plus bas, il faut déclarer les **URI de redirtection autorisées**.
+Ensuite, plus bas, il faut déclarer les **URI de redirection autorisées**.
 Vous pouvez en saisir plusieurs.
 
 > ATTENTION: Les URLS de classe privées sont interdites par Google
 
-![img_1.png](img_1.png)
+![doc/img_8.png](doc/img_8.png)
 
 Vous serez donc **obligés** de saisir une adresse différente pour la redirection.
 
-![img_2.png](img_2.png)
+![doc/img_9.png](doc/img_9.png)
 
 N'oubliez pas de remplir le fichier **.env** correspondant
 
-![img_3.png](img_3.png)
+![doc/img_10.png](doc/img_10.png)
 
 
 
@@ -214,15 +217,5 @@ Database constants:
     CLIENT_SECRET – Specify the GitHub App Client Secret.
     REDIRECT_URL – Specify the Authorization callback URL.
 
-***
-
-## Création d'une application Google
-
-Dans la console Google
-https://console.cloud.google.com/apis/dashboard
-
-Créer un nouveau projet.
-
-Allez ensuite dans **API et services**
 
 
