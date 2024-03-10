@@ -102,7 +102,7 @@ Allez ensuite dans Identifiants dans la colonne de gauche
 
 ![doc/img_3.png](doc/img_3.png)
 
-Cliquez sur **Créer des identifiants**, puis sur ID clientOAuth
+Cliquez sur **Créer des identifiants**, puis sur **ID clientOAuth 2.0**
 
 ![doc/img_4.png](doc/img_4.png)
 
@@ -126,7 +126,7 @@ Vous pouvez en saisir plusieurs.
 
 Vous serez donc **obligés** de saisir une adresse différente pour la redirection.
 
-![doc/img_9.png](doc/img_9.png)
+![](readme_docs/00e511df.png)
 
 N'oubliez pas de remplir le fichier **.env** correspondant
 
@@ -219,3 +219,7 @@ Database constants:
 
 
 
+# Docker
+
+- Lien Application
+- http://localhost:807

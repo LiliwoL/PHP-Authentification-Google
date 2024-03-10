@@ -1,6 +1,9 @@
 # Dockerfile
 FROM php:8.3-apache
 
+ARG user_id=1000
+RUN usermod -u $user_id www-data
+
 EXPOSE 80
 
 WORKDIR /var/www/html
@@ -27,14 +30,17 @@ RUN apt-get update -qq && \
     git \
     gnupg \
     unzip \
+    sqlite3 \
     zip && \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Configuration PHP
-#RUN docker-php-ext-install -j$(nproc) opcache pdo_mysql
+#RUN docker-php-ext-install -j$(nproc) pdo_sqlite
 COPY Docker/config/php.ini /usr/local/etc/php/conf.d/app.ini
 
 
 # Dépendances Composer
-RUN cd /var/www/html/PHP-Authentification-Google && composer install
+RUN cd /var/www/html/PHP-Authentification-Google
+RUN composer install --no-dev --no-interaction --no-autoloader --no-scripts
+RUN composer dump-autoload --optimize

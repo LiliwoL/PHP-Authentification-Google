@@ -59,8 +59,8 @@ class User
             }
 
             // If user exists
-            if( $userData ){
-
+            if( $userData )
+            {
                 // Prepare column and value format
                 $colvalSet = '';
                 $i = 0;
