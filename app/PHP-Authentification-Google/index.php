@@ -1,7 +1,7 @@
 <?php
 
 // Include init file
-require_once ('init.php');
+require_once('init.php');
 
 // Initialize user class
 $user = new User();

@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  # ========================================
+  # Serveur Apache PHP
+  # ========================================
+  php-oauth-google:
+
+    # Emplacement du dockerFile
+    build:
+      # Attention au contexte!
+      context: .
+      dockerfile: ./Docker/Dockerfile
+
+    # Nom du container
+    container_name: php-oauth-google
+    ports:
+      - 807:80
+
+    volumes:
+      # Dossier de l'application dans le DocumentRoot
+      - ./app:/var/www/html
+
+    # Logs
+      - ./logs:/var/log/apache2
+
+    networks:
+      - phpOauthGoogle
+
+networks:
+    phpOauthGoogle:
+        driver: bridge
