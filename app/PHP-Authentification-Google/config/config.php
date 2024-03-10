@@ -3,7 +3,7 @@
 /**
  * Chargement des variables d'environnement
  */
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/PHP-Authentification-Google');
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/..');
 $dotenv->load();
 
 // Base de données
