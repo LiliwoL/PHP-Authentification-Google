@@ -41,6 +41,6 @@ COPY Docker/config/php.ini /usr/local/etc/php/conf.d/app.ini
 
 
 # Dépendances Composer
-RUN cd /var/www/html/PHP-Authentification-Google
+WORKDIR /var/www/html/PHP-Authentification-Google
 RUN composer install --no-dev --no-interaction --no-autoloader --no-scripts
 RUN composer dump-autoload --optimize
